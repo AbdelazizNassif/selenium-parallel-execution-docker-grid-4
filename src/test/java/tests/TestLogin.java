@@ -1,14 +1,15 @@
 package tests;
 
+import com.utils.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestLogin extends TestRegistrationToNopCommerce {
+public class TestLogin extends BaseTest {
 
-    @Test(dependsOnMethods = {"testRegisterToWebsite"})
-    public void testLoginToWebsite() throws InterruptedException {
+    @Test
+    public void testLoginToWebsite() {
         driver.get("https://demo.nopcommerce.com/");
         driver.findElement(By.className("ico-login")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Email")));
