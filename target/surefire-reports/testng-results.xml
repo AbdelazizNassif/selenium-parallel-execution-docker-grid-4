@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-12-25T07:20:38 EET" name="Regression" finished-at="2021-12-25T07:21:08 EET" duration-ms="29744">
+  <suite name="Regression" duration-ms="31434" started-at="2021-12-25T14:55:48 EET" finished-at="2021-12-25T14:56:20 EET">
     <groups>
     </groups>
-    <test started-at="2021-12-25T07:20:38 EET" name="test" finished-at="2021-12-25T07:21:08 EET" duration-ms="29744">
+    <test name="first patch test" duration-ms="31434" started-at="2021-12-25T14:55:48 EET" finished-at="2021-12-25T14:56:20 EET">
       <class name="tests.TestRegistrationToNopCommerce">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TestRegistrationToNopCommerce@7ce3cb8e]" started-at="2021-12-25T07:20:48 EET" name="setUp" finished-at="2021-12-25T07:20:49 EET" duration-ms="682" status="PASS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.TestRegistrationToNopCommerce@467aecef]" name="setUp" is-config="true" duration-ms="1221" started-at="2021-12-25T14:55:55 EET" finished-at="2021-12-25T14:55:57 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testRegisterToWebsite()[pri:0, instance:tests.TestRegistrationToNopCommerce@7ce3cb8e]" started-at="2021-12-25T07:20:49 EET" name="testRegisterToWebsite" finished-at="2021-12-25T07:20:55 EET" duration-ms="5761" status="PASS">
+        <test-method status="PASS" signature="testRegisterToWebsite()[pri:0, instance:tests.TestRegistrationToNopCommerce@467aecef]" name="testRegisterToWebsite" duration-ms="5442" started-at="2021-12-25T14:55:57 EET" finished-at="2021-12-25T14:56:02 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegisterToWebsite -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestRegistrationToNopCommerce@7ce3cb8e]" started-at="2021-12-25T07:20:55 EET" name="tearDown" finished-at="2021-12-25T07:20:55 EET" duration-ms="139" status="PASS">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.TestRegistrationToNopCommerce@467aecef]" name="tearDown" is-config="true" duration-ms="638" started-at="2021-12-25T14:56:02 EET" finished-at="2021-12-25T14:56:03 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.TestRegistrationToNopCommerce -->
       <class name="tests.TestSearchItem">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TestSearchItem@1ffe63b9]" started-at="2021-12-25T07:20:38 EET" name="setUp" finished-at="2021-12-25T07:20:42 EET" duration-ms="3592" status="PASS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.TestSearchItem@4b1c1ea0]" name="setUp" is-config="true" duration-ms="2310" started-at="2021-12-25T14:55:48 EET" finished-at="2021-12-25T14:55:51 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testSearchItemAsGuest()[pri:0, instance:tests.TestSearchItem@1ffe63b9]" started-at="2021-12-25T07:20:42 EET" name="testSearchItemAsGuest" finished-at="2021-12-25T07:20:48 EET" duration-ms="6219" status="PASS">
+        <test-method status="PASS" signature="testSearchItemAsGuest()[pri:0, instance:tests.TestSearchItem@4b1c1ea0]" name="testSearchItemAsGuest" duration-ms="4198" started-at="2021-12-25T14:55:51 EET" finished-at="2021-12-25T14:55:55 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchItemAsGuest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestSearchItem@1ffe63b9]" started-at="2021-12-25T07:20:48 EET" name="tearDown" finished-at="2021-12-25T07:20:48 EET" duration-ms="148" status="PASS">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.TestSearchItem@4b1c1ea0]" name="tearDown" is-config="true" duration-ms="639" started-at="2021-12-25T14:55:55 EET" finished-at="2021-12-25T14:55:55 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.TestSearchItem -->
       <class name="tests.TestLogin">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TestLogin@bef2d72]" started-at="2021-12-25T07:20:55 EET" name="setUp" finished-at="2021-12-25T07:20:55 EET" duration-ms="691" status="PASS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.TestLogin@2173f6d9]" name="setUp" is-config="true" duration-ms="1251" started-at="2021-12-25T14:56:03 EET" finished-at="2021-12-25T14:56:04 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testRegisterToWebsite()[pri:0, instance:tests.TestLogin@bef2d72]" started-at="2021-12-25T07:20:55 EET" name="testRegisterToWebsite" finished-at="2021-12-25T07:21:02 EET" duration-ms="6954" status="PASS">
+        <test-method status="PASS" signature="testRegisterToWebsite()[pri:0, instance:tests.TestLogin@2173f6d9]" name="testRegisterToWebsite" duration-ms="7539" started-at="2021-12-25T14:56:04 EET" finished-at="2021-12-25T14:56:11 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegisterToWebsite -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestLogin@bef2d72]" started-at="2021-12-25T07:21:02 EET" name="tearDown" finished-at="2021-12-25T07:21:02 EET" duration-ms="115" status="PASS">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.TestLogin@2173f6d9]" name="tearDown" is-config="true" duration-ms="658" started-at="2021-12-25T14:56:11 EET" finished-at="2021-12-25T14:56:12 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.TestLogin@bef2d72]" started-at="2021-12-25T07:21:02 EET" name="setUp" finished-at="2021-12-25T07:21:03 EET" duration-ms="683" status="PASS">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.TestLogin@2173f6d9]" name="setUp" is-config="true" duration-ms="1202" started-at="2021-12-25T14:56:12 EET" finished-at="2021-12-25T14:56:13 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testLoginToWebsite()[pri:0, instance:tests.TestLogin@bef2d72]" started-at="2021-12-25T07:21:03 EET" name="testLoginToWebsite" finished-at="2021-12-25T07:21:08 EET" depends-on-methods="tests.TestRegistrationToNopCommerce.testRegisterToWebsite" duration-ms="4628" status="PASS">
+        <test-method status="PASS" signature="testLoginToWebsite()[pri:0, instance:tests.TestLogin@2173f6d9]" name="testLoginToWebsite" duration-ms="5678" started-at="2021-12-25T14:56:13 EET" depends-on-methods="tests.TestRegistrationToNopCommerce.testRegisterToWebsite" finished-at="2021-12-25T14:56:19 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginToWebsite -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestLogin@bef2d72]" started-at="2021-12-25T07:21:08 EET" name="tearDown" finished-at="2021-12-25T07:21:08 EET" duration-ms="106" status="PASS">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.TestLogin@2173f6d9]" name="tearDown" is-config="true" duration-ms="632" started-at="2021-12-25T14:56:19 EET" finished-at="2021-12-25T14:56:20 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.TestLogin -->
-    </test> <!-- test -->
+    </test> <!-- first patch test -->
   </suite> <!-- Regression -->
 </testng-results>

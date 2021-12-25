@@ -1,0 +1,4 @@
+com\utils\BaseTest.class
+tests\TestRegistrationToNopCommerce.class
+tests\TestSearchItem.class
+tests\TestLogin.class
