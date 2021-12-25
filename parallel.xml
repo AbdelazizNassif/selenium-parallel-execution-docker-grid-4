@@ -1,0 +1,10 @@
+<suite name="Regression" >
+    <test name="first patch test" >
+        <classes >
+            <class name="tests.TestSearchItem"> </class>
+            <class name="tests.TestRegistrationToNopCommerce"> </class>
+            <class name="tests.TestLogin"> </class>
+        </classes>
+    </test>
+
+</suite>
