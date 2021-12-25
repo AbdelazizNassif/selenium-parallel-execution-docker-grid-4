@@ -1,9 +1,14 @@
-<suite name="Regression" >
-    <test name="first patch test" >
+<suite name="Parallel Regression" verbose="1" parallel="tests" thread-count="2" >
+    <test name="first patch tests" >
         <classes >
-            <class name="tests.TestSearchItem"> </class>
             <class name="tests.TestRegistrationToNopCommerce"> </class>
             <class name="tests.TestLogin"> </class>
+        </classes>
+    </test>
+
+    <test name="second patch tests" >
+        <classes >
+            <class name="tests.TestSearchItem"> </class>
         </classes>
     </test>
 
