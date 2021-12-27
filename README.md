@@ -1,0 +1,11 @@
+- Implementing parallel test exectution on selenium grid 4 on chrome browser
+- Stpes to run on selenium grid 4
+	- Download selenium grid jar file selenium-server-4.1.1.jar
+	- Download chromedriver.exe 
+	- place both the grid and driver in the same local folder
+	- Go to this local folder then set the hub with the command "java -jar selenium-server-4.1.1.jar hub"
+		- From your chrome browser go to "http://localhost:4444/" and check hub is installed properly
+	- Go to this local folder then set the node with the command "java -jar selenium-server-4.1.1.jar node"
+		- From your chrome browser go to "http://localhost:4444/" and check node is installed properly
+		- this command will detect the chrome driver
+	- Check the code used to implement the parallel execution using java, maven, selenium 4, testing
