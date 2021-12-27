@@ -8,4 +8,5 @@
 	- Go to this local folder then set the node with the command "java -jar selenium-server-4.1.1.jar node"
 		- From your chrome browser go to "http://localhost:4444/" and check node is installed properly
 		- this command will detect the chrome driver
+	- Visit this tutorial https://www.lambdatest.com/blog/selenium-grid-4-tutorial-for-distributed-testing/
 	- Check the code used to implement the parallel execution using java, maven, selenium 4, testing

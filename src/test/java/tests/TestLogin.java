@@ -22,7 +22,7 @@ import java.time.Duration;
 public class TestLogin extends Credentials {
     private WebDriver driver;
     private WebDriverWait wait;
-    private String gridUrl = "http://localhost:4444";
+    private String gridUrl = "http://172.18.0.3:5555/" ;
 
     @Test
     public void testLoginToWebsite() {
