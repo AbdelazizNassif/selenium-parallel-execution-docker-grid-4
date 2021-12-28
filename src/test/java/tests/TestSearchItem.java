@@ -1,6 +1,7 @@
 package tests;
 
 import com.utils.CommonData;
+import com.utils.RunningEnvironment;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
@@ -22,11 +23,10 @@ import java.time.Duration;
 public class TestSearchItem extends CommonData {
     private WebDriver driver;
     private WebDriverWait wait;
-    private String gridUrl = "http://localhost:4445/wd/hub" ;
+    private String gridUrl = "http://localhost:4445/wd/hub";
 
     @Test
-    public void testSearchItemAsGuest()
-    {
+    public void testSearchItemAsGuest() {
         driver.get("https://demo.nopcommerce.com/");
         driver.findElement(By.id("small-searchterms")).sendKeys("mac");
         driver.findElement(By.cssSelector(".search-box-button")).click();
@@ -36,12 +36,25 @@ public class TestSearchItem extends CommonData {
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setBrowserName("chrome");
-        caps.setPlatform(Platform.LINUX);
-        //Create driver object for Chrome
-        WebDriverManager.chromedriver().setup();
-        driver = new RemoteWebDriver(new URL(gridUrl), caps);
+        if(RUNNING_ENV == RunningEnvironment.DOCKER)
+        {
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setBrowserName("chrome");
+            caps.setPlatform(Platform.LINUX);
+            //Create driver object for Chrome
+            WebDriverManager.chromedriver().setup();
+            driver = new RemoteWebDriver(new URL(dockerHubUrl), caps);
+        }
+        else if (RUNNING_ENV == RunningEnvironment.LOCAL_SELENIUM_GRID_4)
+        {
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setBrowserName("chrome");
+            caps.setPlatform(Platform.WIN10);
+            //Create driver object for Chrome
+            WebDriverManager.chromedriver().setup();
+            driver = new RemoteWebDriver(new URL(localSeleniumGridUrl), caps);
+        }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.manage().window().maximize();
     }

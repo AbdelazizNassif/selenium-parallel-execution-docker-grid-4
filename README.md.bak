@@ -17,7 +17,7 @@ Contents of the Repo:
 - Stpes to run on Docker containers
 	- Install docker on your machine. I work on windows and I followed this tutorial https://docs.docker.com/desktop/windows/install/
 	- Run the command "docker compose -f docker-compose-v2.yml up"
-	- Visit the URL "http://localhost:4445/" (This value configured in my docker-compose-v2.yml file"
+	- Visit the URL "http://localhost:4444/" (This value configured in my docker-compose-v2.yml file"
 	- Run the xml file parallel.xml file
 	- This tutorial https://www.youtube.com/watch?v=NjQ5zZM7fpI&t=936s is very useful
 --------------------------------------------------------------------------------------------------------------
