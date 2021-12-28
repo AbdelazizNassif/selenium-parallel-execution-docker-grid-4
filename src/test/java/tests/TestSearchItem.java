@@ -1,5 +1,6 @@
 package tests;
 
+import com.utils.CommonData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
@@ -18,10 +19,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class TestSearchItem {
+public class TestSearchItem extends CommonData {
     private WebDriver driver;
     private WebDriverWait wait;
-    private String gridUrl = "http://172.18.0.3:5555/" ;
+    private String gridUrl = "http://localhost:4445/wd/hub" ;
 
     @Test
     public void testSearchItemAsGuest()
@@ -37,11 +38,10 @@ public class TestSearchItem {
     public void setUp() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setBrowserName("chrome");
-        caps.setPlatform(Platform.WIN10);
+        caps.setPlatform(Platform.LINUX);
         //Create driver object for Chrome
         WebDriverManager.chromedriver().setup();
         driver = new RemoteWebDriver(new URL(gridUrl), caps);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.manage().window().maximize();
     }

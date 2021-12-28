@@ -1,11 +1,10 @@
 package tests;
 
-import com.utils.Credentials;
+import com.utils.CommonData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,10 +18,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class TestLogin extends Credentials {
+public class TestLogin extends CommonData {
     private WebDriver driver;
     private WebDriverWait wait;
-    private String gridUrl = "http://172.18.0.3:5555/" ;
+    private String gridUrl = "http://localhost:4445/wd/hub" ;
 
     @Test
     public void testLoginToWebsite() {
@@ -39,7 +38,7 @@ public class TestLogin extends Credentials {
     public void setUp() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
 caps.setBrowserName("chrome");
-caps.setPlatform(Platform.WIN10);
+caps.setPlatform(Platform.LINUX);
         //Create driver object for Chrome
         WebDriverManager.chromedriver().setup();
         driver = new RemoteWebDriver(new URL(gridUrl), caps);
