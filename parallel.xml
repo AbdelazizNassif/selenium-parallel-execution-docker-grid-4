@@ -3,12 +3,16 @@
         <classes>
             <class name="tests.TestRegistrationToNopCommerce"> </class>
             <class name="tests.TestLogin"> </class>
+            <class name="tests.TestExistenceOfFooterTitles"> </class>
+
         </classes>
     </test>
 
     <test name="second patch tests">
         <classes>
             <class name="tests.TestSearchItem" > </class>
+            <class name="tests.TestExistenceOfPriceDropDownList" > </class>
+            <class name="tests.TestExistenceOfFooterTitles"> </class>
         </classes>
     </test>
 
