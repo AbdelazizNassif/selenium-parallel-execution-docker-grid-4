@@ -4,6 +4,7 @@
             <class name="tests.TestRegistrationToNopCommerce"> </class>
             <class name="tests.TestLogin"> </class>
             <class name="tests.TestExistenceOfFooterTitles"> </class>
+            <class name="tests.TestSearchItem" > </class>
 
         </classes>
     </test>

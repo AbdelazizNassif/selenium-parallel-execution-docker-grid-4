@@ -1,11 +1,14 @@
 package com.utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
+import pages.HomePage;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -19,36 +22,44 @@ public class TestBase {
         LOCAL_SELENIUM_GRID_4 will run tests in parallel on local machine
         DOCKER will run tests in parallel on docker
     */
-    protected static final RunningEnvironment RUNNING_ENV = RunningEnvironment.LOCAL_SELENIUM_GRID_4;
+    protected static final RunningEnvironment RUNNING_ENV = RunningEnvironment.LOCAL_BROWSER;
     /*
     -------------------------------------------------------------------------
      */
     private ThreadLocal<RemoteWebDriver> driver = null;
-    protected WebDriverWait wait;
+    private static DesiredCapabilities caps = null;
 
-    @BeforeClass
-    public void setUp() throws MalformedURLException {
-        if (RUNNING_ENV == RunningEnvironment.DOCKER) {
-            DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setBrowserName("chrome");
-            caps.setPlatform(Platform.LINUX);
-            driver = new ThreadLocal<>();
-            driver.set(new RemoteWebDriver(new URL(dockerHubUrl), caps));
-        } else if (RUNNING_ENV == RunningEnvironment.LOCAL_SELENIUM_GRID_4) {
-            DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setBrowserName("chrome");
-            caps.setPlatform(Platform.WIN10);
-            driver = new ThreadLocal<>();
-            driver.set(new RemoteWebDriver(new URL(localSeleniumGridUrl), caps));
-        }
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));
-        getDriver().manage().window().maximize();
+    private static DesiredCapabilities setDesiredCaps(String browser, Platform platformOS) {
+        caps = new DesiredCapabilities();
+        caps.setBrowserName("chrome");
+        caps.setPlatform(platformOS);
+        return caps;
     }
-
     public WebDriver getDriver() {
         return driver.get();
     }
+
+    @BeforeClass
+    public void setUp() throws MalformedURLException {
+        driver = new ThreadLocal<>();
+
+        if (RUNNING_ENV == RunningEnvironment.DOCKER) {
+            caps = setDesiredCaps("chrome", Platform.LINUX);
+            driver.set(new RemoteWebDriver(new URL(dockerHubUrl), caps));
+        } else if (RUNNING_ENV == RunningEnvironment.LOCAL_SELENIUM_GRID_4) {
+            caps = setDesiredCaps("chrome", Platform.WIN10);
+            driver.set(new RemoteWebDriver(new URL(localSeleniumGridUrl), caps));
+        }
+        else if (RUNNING_ENV == RunningEnvironment.LOCAL_BROWSER) {
+            WebDriverManager.chromedriver().setup();
+            driver.set(new ChromeDriver());
+        }
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        getDriver().manage().window().maximize();
+        getDriver().get(HOME_URL);
+        homePage = new HomePage(getDriver());
+    }
+    public HomePage homePage;
 
     @AfterClass
     public void tearDown() {
