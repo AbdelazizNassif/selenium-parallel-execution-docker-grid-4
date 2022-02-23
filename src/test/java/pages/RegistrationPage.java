@@ -12,7 +12,7 @@ public class RegistrationPage extends HomePage{
     {
         super(driver);
     }
-    // Operations
+    // Operations/ methods
 
     public RegistrationPage fillFirstName(String firstName){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("FirstName")));

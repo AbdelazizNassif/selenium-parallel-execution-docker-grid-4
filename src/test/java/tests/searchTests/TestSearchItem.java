@@ -1,4 +1,4 @@
-package tests;
+package tests.searchTests;
 
 import com.utils.TestBase;
 import org.openqa.selenium.By;
@@ -11,8 +11,9 @@ public class TestSearchItem extends TestBase {
 
     @Test
     public void testSearchItemAsGuest() {
-        SearchPage searchPage = homePage.enterTextToSearchField("mac");
-        Assert.assertEquals(true, searchPage.getTextOfSearchResult().contains("Mac"));
+        String productName  = "mac" ;
+        SearchPage searchPage = homePage.enterTextToSearchField(productName);
+        Assert.assertTrue(searchPage.getTextOfSearchResult().contains(productName));
     }
 
 

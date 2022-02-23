@@ -1,19 +1,20 @@
 <suite name="Parallel Regression" verbose="1" parallel="tests" thread-count="2" >
     <test name="first patch tests">
         <classes>
-            <class name="tests.TestRegistrationToNopCommerce"> </class>
-            <class name="tests.TestLogin"> </class>
-            <class name="tests.TestExistenceOfFooterTitles"> </class>
-            <class name="tests.TestSearchItem" > </class>
+            <class name="tests.registrationTests.TestRegistrationToNopCommerce"> </class>
+            <class name="tests.loginTests.TestLogin"> </class>
+            <class name="tests.homeContentTests.TestExistenceOfFooterTitles"> </class>
+            <class name="tests.searchTests.TestSearchItem" > </class>
+            <class name="tests.cartTests.TestAddToCart" > </class>
 
         </classes>
     </test>
 
     <test name="second patch tests">
         <classes>
-            <class name="tests.TestSearchItem" > </class>
-            <class name="tests.TestExistenceOfPriceDropDownList" > </class>
-            <class name="tests.TestExistenceOfFooterTitles"> </class>
+            <class name="tests.searchTests.TestSearchItem" > </class>
+            <class name="tests.homeContentTests.TestExistenceOfPriceDropDownList" > </class>
+            <class name="tests.homeContentTests.TestExistenceOfFooterTitles"> </class>
         </classes>
     </test>
 

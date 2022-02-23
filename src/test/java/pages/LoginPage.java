@@ -13,17 +13,16 @@ public class LoginPage extends HomePage{
         super(driver);
     }
     // locators
+    By emailField = By.id("Email") ;
+    By password =  By.id("Password");
+    By loginBtn = By.xpath("//button[contains(@class,'login-button')]") ;
     // methods
         public void loginToWebsite(String userEmail, String userPassword)
         {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Email")));
-            driver.findElement(By.id("Email")).sendKeys(userEmail);
-            driver.findElement(By.id("Password")).sendKeys(userPassword);
-            driver.findElement(By.xpath("//button[contains(@class,'login-button')]")).click();
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("ico-logout")));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(emailField));
+            driver.findElement(emailField).sendKeys(userEmail);
+            driver.findElement(password).sendKeys(userPassword);
+            driver.findElement(loginBtn).click();
         }
-        public  boolean isLogoutDisplayed()
-        {
-            return  driver.findElement(By.className("ico-logout")).isDisplayed();
-        }
+
 }

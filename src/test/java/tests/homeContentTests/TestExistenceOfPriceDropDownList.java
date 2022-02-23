@@ -1,4 +1,4 @@
-package tests;
+package tests.homeContentTests;
 
 import com.utils.TestBase;
 import org.openqa.selenium.By;
